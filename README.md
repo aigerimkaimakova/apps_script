@@ -5,7 +5,7 @@
 <h2>Использование</h2>
 <ol>
 
-<li>Откройте приложение по https://script.google.com/macros/s/AKfycbx6vMw82Cx3gejQtr3O0Cz5kTLQMq8h90hzdYmTyAotsQVMBGdDDY3jsmTrt6dTuBUraw/exec</li>
+<li>Откройте приложение по https://script.google.com/macros/s/AKfycbzXX_xgsYx_jNSeo75PuI8aT2PG8VNmhjrW_geznB_WXvvWmteQhne2P6CbGqMh3C5h-w/exec</li>
 
 <li>Напишите сколько Вам лет, ваш вес(кг) и рост(см).</li>
 
