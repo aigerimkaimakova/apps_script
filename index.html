@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+
+</head>
+<body>
+  <h2>ИНДЕКС МАССЫ ТЕЛА КАЛЬКУЛЯТОР</h2>
+  <p1> Индекс массы тела помогает определить идеальный для вас вес, исходя из ваших параметров. Формула проста: ваш фактический вес делим на ваш рост (в метрах) в квадрате.</p1>
+
+
+  <form id="bmiForm">
+    <label for="age">Возраст:</label>
+    <input type="number" id="age" name="age" required><br><br>
+
+    <label for="weight">Вес (кг):</label>
+    <input type="number" id="weight" name="weight" required><br><br>
+
+    <label for="height">Рост (см):</label>
+    <input type="number" id="height" name="height" required><br><br>
+
+    <input type="submit" value="Рассчитать ИМТ">
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    document.getElementById("bmiForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      calculateBMI();
+    });
+
+    function calculateBMI() {
+      var age = parseInt(document.getElementById("age").value);
+      var weight = parseFloat(document.getElementById("weight").value);
+      var height = parseFloat(document.getElementById("height").value) / 100; // Convert height to meters
+      var bmi = weight / (height * height);
+      var status = "";
+
+      if (age >= 18 && age <= 24) {
+        if (bmi < 19) {
+          status = "Недостаточный вес";
+        } else if (bmi >= 19 && bmi <= 24) {
+          status = "Нормальный вес";
+        } else if (bmi > 24 && bmi <= 29) {
+          status = "Избыточный вес";
+        } else if (bmi > 29 && bmi <= 39) {
+          status = "Ожирение 1-2 степени";
+        } else {
+          status = "Ожирение 3 степени";
+        }
+      } else if (age >= 25 && age <= 34) {
+        if (bmi < 20) {
+          status = "Недостаточный вес";
+        } else if (bmi >= 20 && bmi <= 25) {
+          status = "Нормальный вес";
+        } else if (bmi > 25 && bmi <= 30) {
+          status = "Избыточный вес";
+        } else if (bmi > 30 && bmi <= 40) {
+          status = "Ожирение 1-2 степени";
+        } else {
+          status = "Ожирение 3 степени";
+        }
+      } else if (age >= 35 && age <= 44) {
+        if (bmi < 21) {
+          status = "Недостаточный вес";
+        } else if (bmi >= 21 && bmi <= 26) {
+          status = "Нормальный вес";
+        } else if (bmi > 26 && bmi <= 31) {
+          status = "Избыточный вес";
+        } else if (bmi > 31 && bmi <= 41) {
+          status = "Ожирение 1-2 степени";
+        } else {
+          status = "Ожирение 3 степени";
+        }
+      } else if (age >= 45 && age <= 54) {
+        if (bmi < 22) {
+          status = "Недостаточный вес";
+        } else if (bmi >= 22 && bmi <= 27) {
+          status = "Нормальный вес";
+        } else if (bmi > 27 && bmi <= 32) {
+          status = "Избыточный вес";
+        } else if (bmi > 32 && bmi <= 42) {
+          status = "Ожирение 1-2 степени";
+        } else {
+          status = "Ожирение 3 степени";
+        }
+      } else if (age >= 55 && age <= 64) {
+        if (bmi < 23) {
+          status = "Недостаточный вес";
+        } else if (bmi >= 23 && bmi <= 28) {
+          status = "Нормальный вес";
+        } else if (bmi > 28 && bmi <= 33) {
+          status = "Избыточный вес";
+        } else if (bmi > 33 && bmi <= 43) {
+          status = "Ожирение 1-2 степени";
+        } else {
+          status = "Ожирение 3 степени";
+        }
+      } else if (age >= 65) {
+        if (bmi < 24) {
+          status = "Недостаточный вес";
+        } else if (bmi >= 24 && bmi <= 29) {
+          status = "Нормальный вес";
+        } else if (bmi > 29 && bmi <= 34) {
+          status = "Избыточный вес";
+        } else if (bmi > 34 && bmi <= 44) {
+          status = "Ожирение 1-2 степени";
+        } else {
+          status = "Ожирение 3 степени";
+        }
+      } else {
+        status = "Нет данных для данного возраста";
+      }
+
+      document.getElementById("result").innerText = "Ваш ИМТ: " + bmi.toFixed(2) + ". Статус: " + status;
+    }
+  </script>
+</body>
+</html>
